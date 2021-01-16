@@ -19,6 +19,8 @@ public class PrimeNumbersTest {
                 primeNumbers.add(2);
                 division = division / 2;
             }
+            if (division > 1)
+                primeNumbers.add(division);
             return primeNumbers;
         }
         return singletonList(number);
@@ -31,5 +33,6 @@ public class PrimeNumbersTest {
         assertEquals(singletonList(3), primeNumbers(3));
         assertEquals(asList(2, 2), primeNumbers(4));
         assertEquals(singletonList(5), primeNumbers(5));
+        assertEquals(asList(2, 3), primeNumbers(6));
     }
 }
