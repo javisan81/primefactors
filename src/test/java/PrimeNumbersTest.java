@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.Arrays.asList;
@@ -11,10 +12,15 @@ public class PrimeNumbersTest {
     private List<Integer> primeNumbers(int number) {
         if (number == 1)
             return emptyList();
-        if (number == 2)
-            return asList(2);
-        if (number == 4)
-            return asList(2, 2);
+        if (number % 2 == 0) {
+            List<Integer> primeNumbers = new ArrayList<>();
+            int division = number;
+            while (division % 2 == 0) {
+                primeNumbers.add(2);
+                division = division / 2;
+            }
+            return primeNumbers;
+        }
         return singletonList(number);
     }
 
