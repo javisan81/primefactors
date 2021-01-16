@@ -10,20 +10,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PrimeNumbersTest {
     private List<Integer> primeNumbers(int number) {
-        if (number == 1)
-            return emptyList();
-        int prime = 2;
         List<Integer> primeNumbers = new ArrayList<>();
-        int division = number;
+        int divisionResult = number;
+        int prime = 2;
         do {
-            while (division % prime == 0) {
+            while (divisionResult % prime == 0) {
                 primeNumbers.add(prime);
-                division = division / prime;
+                divisionResult = divisionResult / prime;
             }
-            if (division > 1) {
+            if (divisionResult > 1) {
                 prime++;
             }
-        } while (division != 1);
+        } while (divisionResult != 1);
         return primeNumbers;
     }
 
