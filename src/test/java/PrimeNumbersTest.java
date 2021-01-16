@@ -12,29 +12,19 @@ public class PrimeNumbersTest {
     private List<Integer> primeNumbers(int number) {
         if (number == 1)
             return emptyList();
-        if (number % 2 == 0) {
-            List<Integer> primeNumbers = new ArrayList<>();
-            int division = number;
-            while (division % 2 == 0) {
-                primeNumbers.add(2);
-                division = division / 2;
+        int prime = 2;
+        List<Integer> primeNumbers = new ArrayList<>();
+        int division = number;
+        do {
+            while (division % prime == 0) {
+                primeNumbers.add(prime);
+                division = division / prime;
             }
-            if (division > 1)
-                primeNumbers.add(division);
-            return primeNumbers;
-        }
-        if (number % 3 == 0) {
-            List<Integer> primeNumbers = new ArrayList<>();
-            int division = number;
-            while (division % 3 == 0) {
-                primeNumbers.add(3);
-                division = division / 3;
+            if (division > 1) {
+                prime++;
             }
-            if (division > 1)
-                primeNumbers.add(division);
-            return primeNumbers;
-        }
-        return singletonList(number);
+        } while (division != 1);
+        return primeNumbers;
     }
 
     @Test
