@@ -10,12 +10,13 @@ public class PrimeNumbersTest {
     private List<Integer> primeNumbers(int number) {
         if (number == 1)
             return emptyList();
-        return singletonList(2);
+        return singletonList(number);
     }
 
     @Test
     public void severalPrimeNumbers() {
         assertEquals(emptyList(), primeNumbers(1));
         assertEquals(singletonList(2), primeNumbers(2));
+        assertEquals(singletonList(3), primeNumbers(3));
     }
 }
