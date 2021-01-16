@@ -34,5 +34,7 @@ public class PrimeNumbersTest {
         assertEquals(asList(2, 2), primeNumbers(4));
         assertEquals(singletonList(5), primeNumbers(5));
         assertEquals(asList(2, 3), primeNumbers(6));
+        assertEquals(singletonList(7), primeNumbers(7));
+        assertEquals(asList(2, 2, 2), primeNumbers(8));
     }
 }
