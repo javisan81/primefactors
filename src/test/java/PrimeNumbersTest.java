@@ -22,5 +22,6 @@ public class PrimeNumbersTest {
         assertEquals(singletonList(2), primeNumbers(2));
         assertEquals(singletonList(3), primeNumbers(3));
         assertEquals(asList(2, 2), primeNumbers(4));
+        assertEquals(singletonList(5), primeNumbers(5));
     }
 }
