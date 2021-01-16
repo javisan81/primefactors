@@ -23,6 +23,17 @@ public class PrimeNumbersTest {
                 primeNumbers.add(division);
             return primeNumbers;
         }
+        if (number % 3 == 0) {
+            List<Integer> primeNumbers = new ArrayList<>();
+            int division = number;
+            while (division % 3 == 0) {
+                primeNumbers.add(3);
+                division = division / 3;
+            }
+            if (division > 1)
+                primeNumbers.add(division);
+            return primeNumbers;
+        }
         return singletonList(number);
     }
 
@@ -36,5 +47,6 @@ public class PrimeNumbersTest {
         assertEquals(asList(2, 3), primeNumbers(6));
         assertEquals(singletonList(7), primeNumbers(7));
         assertEquals(asList(2, 2, 2), primeNumbers(8));
+        assertEquals(asList(3, 3), primeNumbers(9));
     }
 }
