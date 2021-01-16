@@ -11,8 +11,10 @@ public class PrimeNumbersTest {
     private List<Integer> primeNumbers(int number) {
         if (number == 1)
             return emptyList();
+        if (number == 2)
+            return asList(2);
         if (number == 4)
-            return asList(2,2);
+            return asList(2, 2);
         return singletonList(number);
     }
 
